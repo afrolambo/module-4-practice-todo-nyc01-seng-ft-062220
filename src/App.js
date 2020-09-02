@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import { CATEGORIES } from './data'
+import TaskContainer from './Containers/TaskContainer'
+import Categories from './Components/Categories'
 
 class App extends React.Component {
 
@@ -41,6 +43,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <h2>My tasks</h2>
+        <Categories categories={CATEGORIES}/>
+        <TaskContainer />
       </div>
     );
   }
