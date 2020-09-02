@@ -37,6 +37,7 @@ class App extends React.Component {
         category: 'Misc'
       }
     ], 
+    filteredTasks: [],
     categories: CATEGORIES, 
     selected: "All"
   }
@@ -44,7 +45,8 @@ class App extends React.Component {
   clickHandler = (e) => {
     let button = e.target
     this.setState({
-      selected: button.innerText
+      selected: button.innerText,
+      filteredTasks: []
     })
   }
 
@@ -54,7 +56,7 @@ class App extends React.Component {
       <div className="App">
         <h2>My tasks</h2>
         <Categories selected={this.state.selected} categories={this.state.categories} clickHandler={this.clickHandler}/>
-        <TaskContainer tasks={this.state.tasks} selectedCategory={this.state.selected}/>
+        <TaskContainer tasks={this.state.tasks} selectedCategory={this.state.selected} selectedTasks={this.state.filteredTasks} />
       </div>
     );
   }
