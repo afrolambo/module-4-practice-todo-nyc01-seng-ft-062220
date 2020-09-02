@@ -1,9 +1,18 @@
 import React from 'react'
+import Tasks from '../Components/Tasks'
 
 class TaskContainer extends React.Component {
+
+    
+
     render(){
+        let tasks = this.props.tasks
+        let taskList = tasks.map(function(task, index){return <Tasks key={index} task={task} />})
         return(
-            <h5>Tasks</h5>
+            <div className="tasks">
+                <h5>Tasks</h5>
+                {taskList}
+            </div>
         )
     }
 }

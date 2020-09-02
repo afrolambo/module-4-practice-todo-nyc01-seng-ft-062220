@@ -36,15 +36,25 @@ class App extends React.Component {
         text: 'Tidy house',
         category: 'Misc'
       }
-    ]
+    ], 
+    categories: CATEGORIES, 
+    selected: "All"
+  }
+
+  clickHandler = (e) => {
+    let button = e.target
+    this.setState({
+      selected: button.innerText
+    })
   }
 
   render() {
+    console.log(this.state.selected)
     return (
       <div className="App">
         <h2>My tasks</h2>
-        <Categories categories={CATEGORIES}/>
-        <TaskContainer />
+        <Categories selected={this.state.selected} categories={this.state.categories} clickHandler={this.clickHandler}/>
+        <TaskContainer tasks={this.state.tasks} selectedCategory={this.state.selected}/>
       </div>
     );
   }
