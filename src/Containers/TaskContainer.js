@@ -1,9 +1,8 @@
 import React from 'react'
 import Tasks from '../Components/Tasks'
+import ToDoForm from '../Components/ToDoForm'
 
 class TaskContainer extends React.Component {
-
-    
 
     render(){
         let tasks = this.props.tasks
@@ -32,6 +31,7 @@ class TaskContainer extends React.Component {
         return(
             <div className="tasks">
                 <h5>Tasks</h5>
+                <ToDoForm />
                 {listSorter()}
             </div>
         )
