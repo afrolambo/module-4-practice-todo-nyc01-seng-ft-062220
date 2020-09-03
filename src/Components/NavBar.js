@@ -1,15 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Container, Menu } from 'semantic-ui-react'
+import { Container, Menu, Grid } from 'semantic-ui-react'
 
 const NavBar = (props) => {
   return (
     <Container>
       <Menu className="navbar">
 
-        <NavLink to="/">Home </NavLink>
-        <NavLink to="/todo">Todo </NavLink>
-        <NavLink to="/login">Login </NavLink>
+        <NavLink className="navLink" to="/">Home </NavLink>
+        <NavLink className="navLink" to="/todo">Todo </NavLink>
+        <NavLink className="navLink" to="/login">Login </NavLink>
       
       </Menu>
     </Container>

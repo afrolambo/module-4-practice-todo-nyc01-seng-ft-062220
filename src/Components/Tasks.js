@@ -1,11 +1,14 @@
 import React from 'react'
 
-function Tasks({task}){
-    
+function Tasks({task, doneHandler}){
+
+    let deleteHandler = (e) => {
+        doneHandler(task) 
+    }
     return <div className="task">
         <div className="label">{task.category}</div>
         <div className="text">{task.text}</div>
-        <button class="delete">X</button>
+        <button onClick={deleteHandler} className="delete">X</button>
     </div>
 }
 
